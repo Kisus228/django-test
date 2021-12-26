@@ -1,13 +1,14 @@
 1. Применить команду **pip install -r requirements.txt** для установления зависимостей
 
+2. Применить команду **npm install** в папке **.\business_trips_assistant\frontend** для установки модулей.
 
-2. Установить субд **postgres**
-
-
-3. В субд создать базу данных
+3. Установить субд **postgres**
 
 
-4. Создать файл .env прописать в нём переменные окружения
+4. В субд создать базу данных
+
+
+5. Создать файл .env прописать в нём переменные окружения
    
    
     - CHROMEDRIVER - путь до chromedriver.exe 
@@ -18,6 +19,6 @@
     - PORT_DATA_BASE - порт базы данных 
 
 
-5. Применить фиксутры c помощью команд:
+6. Применить фиксутры c помощью команд:
     - python manage.py loaddata city.json
     - python manage.py loaddata station.json
