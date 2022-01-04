@@ -17,7 +17,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 not_exist_names = []
-variables_env = ['CHROMEDRIVER', 'PASSWORD_DATA_BASE', 'NAME_DATA_BASE',
+variables_env = ['PASSWORD_DATA_BASE', 'NAME_DATA_BASE',
                  'USER_DATA_BASE', 'HOST_DATA_BASE', 'PORT_DATA_BASE']
 for variable in variables_env:
     if os.environ.get(variable) is None:

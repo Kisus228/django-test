@@ -81,7 +81,7 @@ def get_data_with_selenium(url):
     """
     options = webdriver.ChromeOptions()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    service = Service(os.getenv('CHROMEDRIVER'))
+    service = Service(os.path.join(os.getcwd(), 'hotel_api', 'chromedriver.exe'))
     driver = webdriver.Chrome(service=service, options=options)
     driver.get(url=url)
     time.sleep(5)
