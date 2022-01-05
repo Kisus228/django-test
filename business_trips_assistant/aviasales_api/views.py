@@ -2,7 +2,7 @@
 import json
 from django.http import HttpResponse
 from .handler import get_request
-from .models import City
+from .models import City, Airport
 
 
 def get_air_ticket(request):
@@ -14,9 +14,10 @@ def get_air_ticket(request):
     """
     name_city_departure = request.GET.get('cityFrom').upper()
     name_city_arrival = request.GET.get('cityTo').upper()
+    name_airport_departure = request.GET.get('airportFrom')
+    name_airport_arrival = request.GET.get('airportTo')
     depart_date = request.GET.get('dateDepart')
-    is_direct = request.GET.get('isDirect')
-    response = get_request(name_city_departure, name_city_arrival, depart_date, is_direct)
+    response = get_request(name_city_departure, name_city_arrival, depart_date, name_airport_departure, name_airport_arrival)
     result = json.dumps(response.json())
     return HttpResponse(result, content_type='application/json', charset='utf-8')
 
@@ -26,8 +27,21 @@ def get_city_by_prefix(request):
     Метод находит города по переданному префиксу
     Args:
         request: Request содержит префикс города
-    Returns: json файл со списком городов начинающихся на prefix
+    Returns: список городов начинающихся на prefix
     """
     prefix = request.GET.get('prefix').upper()
-    cities = [c.city + " " for c in City.objects.filter(city__startswith=prefix)]
+    cities = ",".join([c.city + "," for c in City.objects.filter(city__startswith=prefix)])
     return HttpResponse(cities, content_type='application/json', charset='utf-8')
+
+
+def get_airport_by_city(request):
+    """
+    Метод находит аэропорты в заданном городе
+    Args:
+        request: Request содержит название города
+    Returns: список аэропортов в указанном городе
+    """
+    city_name = request.GET.get('cityName').upper()
+
+    airports = ",".join([a.airport for a in Airport.objects.filter(city=city_name)])
+    return HttpResponse(airports, content_type='application/json', charset='utf-8')
