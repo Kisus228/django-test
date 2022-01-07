@@ -6,11 +6,10 @@ import {withRouter} from "react-router-dom";
 import TransportConstructor from "./TransportConstructor/TransportConstructor";
 import {
     initializeTransport,
-    setRZDTC,
-    setStationsTC,
+    setTransportTC, uninitializedDataSuccess,
     uninitializedTransportSuccess
 } from "../../redux/transportReducer";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {
     initializeBTInfo,
     postTransportInfoTC,
@@ -23,7 +22,14 @@ const Transport = (props) => {
         ? (props.businessTrip.id || 'new')
         : Number(props.match.params.businessTripId);
 
-    const direction = props.match.params.direction
+    const direction = props.match.params.direction;
+
+    const options = [
+        {value: 1, label: 'РЖД'},
+        {value: 0, label: 'Aviasales'}
+    ]
+
+    const [selectedOption, setSelectedOption] = useState([options[0]]);
 
     useEffect(() => {
             props.uninitializedSuccess();
@@ -33,27 +39,27 @@ const Transport = (props) => {
         []);
 
     useEffect(() => {
+            props.uninitializedDataSuccess();
             props.initializeBTInfo(id).then(() => {
-                if (props.initializedBT) {
-                    if (!!props.businessTrip.fromCity && !!props.businessTrip.toCity)
-                        props.initializeTransport(props.businessTrip.fromCity, props.businessTrip.toCity)
-                }
+                if (props.initializedBT && !!props.businessTrip.fromCity && !!props.businessTrip.toCity)
+                    props.initializeTransport(props.businessTrip.fromCity, props.businessTrip.toCity,
+                        selectedOption);
             });
         },
         // eslint-disable-next-line
-        [props.initializedBT]);
+        [props.initializedBT, selectedOption]);
 
     if (!props.initializedBT || !props.initializedTransport)
         return null
 
     const onBuying = (data) => {
         if (id !== 'new') {
-            const type = direction === 'there' ? 0 : 1
+            const type = direction === 'there' ? 0 : 1;
             const trip = props.businessTrip.trip !== undefined
                 ? props.businessTrip.trip.find(trip => trip.isFirst === type)
                 : undefined;
-            const dateDeparture = data.trip.localDate0.split('.')
-            const dateArrival = data.trip.localDate1.split('.')
+            const dateDeparture = data.trip.localDate0.split('.');
+            const dateArrival = data.trip.localDate1.split('.');
             const postData = {
                 idBT: id,
                 transport: data.transportDataSearch.type,
@@ -68,14 +74,15 @@ const Transport = (props) => {
                 stationTo: data.trip.station1,
             }
             if (trip === undefined)
-                props.postTransportInfoTC(postData)
+                props.postTransportInfoTC(postData);
             else
-                props.putTransportInfoTC(postData)
+                props.putTransportInfoTC(postData);
         }
     }
     return (
         <div className={classes.body_container}>
-            <TransportForm {...props} id={id} direction={direction}/>
+            <TransportForm {...props} id={id} direction={direction} selectedOption={selectedOption}
+                           setSelectedOption={setSelectedOption} options={options}/>
             <div className={classes.body_wrapper}>
                 {
                     props.transport !== undefined && props.transportDataSearch !== undefined
@@ -106,12 +113,12 @@ const mapStateToProps = (state) => {
 
 export default compose(connect(mapStateToProps,
     {
-        setRZDTC,
+        setTransportTC,
         initializeBTInfo,
         initializeTransport,
-        setStationsTC,
         postTransportInfoTC,
         putTransportInfoTC,
         uninitializedSuccess,
-        uninitializedTransportSuccess
+        uninitializedTransportSuccess,
+        uninitializedDataSuccess,
     }), withRouter)(Transport);

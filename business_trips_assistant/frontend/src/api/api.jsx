@@ -197,17 +197,41 @@ export const transportAPI = {
             .then(data => data)
             .catch(error => console.error(error))
     },
-    async getCodeCity(city) {
+    async getCodeCityRZD(city) {
         const url = `/railways/cities_list?prefix=${city}`
         return await fetch(url)
             .then(response => response.json())
             .then(data => data)
             .catch(error => console.error(error))
     },
-    async getStations(code) {
+    async getStationsRZD(code) {
         const url = `/railways/stations_list?code=${code}`
         return await fetch(url)
             .then(response => response.json())
+            .then(data => data)
+            .catch(error => console.error(error))
+    },
+    async getAviasales(cityT, cityF, stationT, stationF, date) {
+        const url = [`/aviasales/ticket_avia?cityTo=${cityT}&cityFrom=${cityF}&dateDepart=${date}`,
+            stationT === '' || stationT === undefined ? '' : `&airportTo=${stationT}` ,
+            stationF === '' || stationF === undefined ?' ' : `&airportFrom=${stationF}`,
+        ];
+        return await fetch(url.join(""))
+            .then(response => response.json())
+            .then(data => data)
+            .catch(error => console.error(error))
+    },
+    async getCodeCityAviasales(city) {
+        const url = `/aviasales/cities_list?prefix=${city}`
+        return await fetch(url)
+            .then(response => response.text())
+            .then(data => data)
+            .catch(error => console.error(error))
+    },
+    async getStationsAviasales(code) {
+        const url = `/aviasales/airports_list?cityName=${code}`
+        return await fetch(url)
+            .then(response => response.text())
             .then(data => data)
             .catch(error => console.error(error))
     },

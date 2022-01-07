@@ -25,6 +25,14 @@ const validate = (values) => {
         errors.checkOut = 'Обязательно';
     }
 
+    if (values.checkIn >= values.checkOut) {
+        errors.checkOut = 'Выберите корректную дату';
+    }
+
+    if (values.star !== '' && (values.star < 0 || values.star > 5)) {
+        errors.star = 'Err';
+    }
+
     return errors;
 };
 
@@ -118,20 +126,18 @@ const HotelForm = (props) => {
                             label="Звёзды"
                             disabled={selectedOption.value === "airbnb"}
                         />
-                        <div className={classes.group}>
-                            <CheckBox
-                                name="parking"
-                                type="checkbox"
-                                label="Парковка"
-                                onChange={() => setParking(!parking)}
-                            />
-                            <CheckBox
-                                name="wifi"
-                                type="checkbox"
-                                label="Wi-Fi"
-                                onChange={() => setWifi(!wifi)}
-                            />
-                        </div>
+                        <CheckBox
+                            name="parking"
+                            type="checkbox"
+                            label="Парковка"
+                            onChange={() => setParking(!parking)}
+                        />
+                        <CheckBox
+                            name="wifi"
+                            type="checkbox"
+                            label="Wi-Fi"
+                            onChange={() => setWifi(!wifi)}
+                        />
                         <button type="submit" className={cn(classes.button, classes.save)}>
                             Поиск
                         </button>

@@ -1,8 +1,6 @@
 import {Formik, Form} from 'formik';
 import classes from "./Register.module.css";
 import TextInput from "../Common/FormControl/TextInput";
-import {NavLink} from "react-router-dom";
-import {getAuthMeTC, postAuthLoginTC, postTelegramTC} from "../../redux/authReducer";
 
 const validate = (values) => {
     const errors = {};

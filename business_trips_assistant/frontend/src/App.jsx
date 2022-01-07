@@ -16,8 +16,10 @@ import Register from "./components/Register/Register";
 
 const App = (props) => {
     useEffect(() => {
-        props.initializeApp()
-    }, []);
+            props.initializeApp()
+        },
+        // eslint-disable-next-line
+        []);
 
     if (!props.initialized)
         return null

@@ -28,13 +28,6 @@ const TransportForm = (props) => {
         toAnyStation: false,
     }
 
-    const options = [
-        {value: 1, label: 'РЖД'},
-        {value: 0, label: 'Aviasales'}
-    ]
-
-    const [selectedOption, setSelectedOption] = useState(options[0]);
-
     const stationsFrom = props.stationsFrom?.map((station) => {
             return {
                 label: station.station,
@@ -50,6 +43,7 @@ const TransportForm = (props) => {
                 label: station.station,
                 value: station.station,
                 code: station.code,
+                type: station.type,
             }
         })
 
@@ -64,14 +58,12 @@ const TransportForm = (props) => {
                 const info = {
                     cityT: values.toCity,
                     cityF: values.fromCity,
-                    stationT: selectedStationTo?.value,
-                    stationF: selectedStationFrom?.value,
-                    codeST: selectedStationTo?.code,
-                    codeSF: selectedStationFrom?.code,
+                    stationT: selectedStationTo,
+                    stationF: selectedStationFrom,
                     date: values.date,
-                    type: selectedOption?.value,
+                    type: props.selectedOption,
                 }
-                props.setRZDTC(info);
+                props.setTransportTC(info);
             }}>
             <Form className={classes.body_container}>
                 <div className={classes.first_row}>
@@ -125,10 +117,11 @@ const TransportForm = (props) => {
                 </div>
                 <div className={classes.row}>
                     <SelectInput
-                        options={options}
+                        options={props.options}
                         classNamePrefix="select"
-                        defaultValue={selectedOption}
-                        onChange={setSelectedOption}
+                        defaultValue={props.selectedOption}
+                        onChange={props.setSelectedOption}
+                        isMulti
                         name="type"
                         type="text"
                         placeholder="Вид транспорта..."

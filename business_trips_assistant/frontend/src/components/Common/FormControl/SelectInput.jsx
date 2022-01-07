@@ -70,6 +70,27 @@ const SelectInput = ({label, ...props}) => {
                             ...provided,
                             height: 30,
                         }),
+                        multiValueLabel: (styles) => ({
+                            ...styles,
+                            padding: 0,
+                            paddingRight: 4,
+                        }),
+                        multiValue: (styles) => ({
+                            ...styles,
+                            height: 20,
+                            verticalAlign: "center",
+                            borderRadius: 20,
+                            //backgroundColor: "rgba(255,255,255,0)",
+                        }),
+                        multiValueRemove: (styles) => ({
+                            ...styles,
+                            width: 20,
+                            borderRadius: 20,
+                            ':hover': {
+                                backgroundColor: "red",
+                                color: 'white',
+                            },
+                        }),
                     }}
                     {...props}>
                 </Select>

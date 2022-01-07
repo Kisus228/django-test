@@ -25,13 +25,13 @@ const setUserId = (data, isAuth) => ({type: SET_USER_DATA, data, isAuth});
 
 export const getAuthMeTC = () => async (dispatch) => {
     const data = await authAPI.getAuthMe()
-    if (data.detail !== 'Authentication credentials were not provided.') {
+    if (data !== undefined && data.detail !== 'Authentication credentials were not provided.') {
         dispatch(setUserId(data.data, true));
         const newDataCsrf = await authAPI.getCsrf();
         if (newDataCsrf !== undefined) {
             dispatch(() => Cookies.set('csrftoken', newDataCsrf));
         }
-    }
+    } else alert('Не удаётся связаться с сервером.');
 }
 
 export const postAuthLoginTC = (info) => async (dispatch) => {
@@ -51,7 +51,7 @@ export const postAuthRegisterTC = (info) => async (dispatch) => {
 }
 
 export const deleteAuthLoginTC = () => async (dispatch) => {
-    const data = await authAPI.deleteAuthLogin();
+    await authAPI.deleteAuthLogin();
     dispatch(setUserId({id: null, email: null, username: null}, false));
     dispatch(setBusinessTrips([]))
 }
