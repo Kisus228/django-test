@@ -13,7 +13,8 @@ def write_fixtures():
             if city_info['country_code'] == 'RU':
                 dict_json = {'model': 'aviasales_api.city',
                              'pk': city_info['code'].upper(),
-                             'fields': {'city': city_info['name'].upper()}}
+                             'fields': {'city': city_info['name'].upper(),
+                                        'time_zone': city_info['time_zone']}}
                 data_to_json.append(dict_json)
 
     js_data = json.dumps(data_to_json, ensure_ascii=False, indent=4)

@@ -1,5 +1,6 @@
 """Модуль для работы с API Aviasales"""
 import requests
+import arrow
 from .models import City, Airport
 
 
@@ -53,3 +54,40 @@ def get_request(name_city_departure, name_city_arrival, depart_date, name_airpor
                    "sorting": "price"}
     response = requests.request("GET", url, headers=headers, params=querystring)
     return response
+
+
+def get_processed_response(response):
+    response = response.json()
+
+    if not response['success'] or response['data'] == []:
+        return {}
+
+    processed_response = []
+    for flight_data in response['data']:
+        tz0 = City.objects.get(code=flight_data['origin']).time_zone
+        tz1 = City.objects.get(code=flight_data['destination']).time_zone
+        dt0_local = arrow.get(flight_data['departure_at'], tzinfo=tz0)
+        dt1_local = dt0_local.shift(minutes=flight_data['duration']).to(tz1)
+        delta_tz0 = int(arrow.get(dt0_local.strftime('%z'), '+HHmm').format('HH')) - 3
+        delta_tz1 = int(arrow.get(dt1_local.strftime('%z'), '+HHmm').format('HH')) - 3
+
+        flight = {}
+
+        flight['type'] = 0
+        flight['fromCode'] = flight_data['origin']
+        flight['link'] = 'https://www.aviasales.ru' + flight_data['link']
+        flight['localDate0'] = dt0_local.format('DD.MM.YYYY')
+        flight['localDate1'] = dt1_local.format('DD.MM.YYYY')
+        flight['localTime0'] = dt0_local.format('H:mm')
+        flight['localTime1'] = dt1_local.format('H:mm')
+        flight['number'] = flight_data['airline'] + '-' + flight_data['flight_number']
+        flight['station0'] = Airport.objects.get(code=flight_data['origin_airport']).airport
+        flight['station1'] = Airport.objects.get(code=flight_data['destination_airport']).airport
+        flight['timeDeltaString0'] = 'МСК' + ('{:+d}'.format(delta_tz0) if delta_tz0 != 0 else '')
+        flight['timeDeltaString1'] = 'МСК' + ('{:+d}'.format(delta_tz1) if delta_tz1 != 0 else '')
+        flight['timeInWay'] = arrow.get(flight_data['duration'] * 60).format('H:mm')
+        flight['whereCode'] = flight_data['destination']
+
+        processed_response.append(flight)
+
+    return processed_response
