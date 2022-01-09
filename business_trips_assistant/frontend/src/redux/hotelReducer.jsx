@@ -7,12 +7,13 @@ let initialState = {
     count: 0,
     hotels: [],
     hotelsDataSearch: {},
+    pageSize: 0,
 }
 
 const HotelReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_HOTEL:
-            return {...state, hotels: [...action.items], count: action.count};
+            return {...state, hotels: [...action.items], count: action.count, pageSize: action.items.length};
         case SET_DATA:
             return {...state, hotelsDataSearch: {...action.items}};
         default:
@@ -21,8 +22,12 @@ const HotelReducer = (state = initialState, action) => {
 }
 
 export const setHotelsTC = (info) => async (dispatch) => {
-    const data = await hotelsAPI.getHotels(info.city, info.offset, info.star, info.option, info.checkIn, info.checkOut,
-        info.conveniences);
+    let data;
+    if (info.option === 'booking')
+        data = await hotelsAPI.getBooking(info.city, info.offset, info.star, info.checkIn, info.checkOut,
+            info.conveniences);
+    if (info.option === 'airbnb')
+        data = await hotelsAPI.getAirbnb(info.city, info.offset, info.checkIn, info.checkOut, info.wifi, info.parking);
     if (data !== undefined) {
         dispatch(setHotels(data.count_hotels, data.hotels));
         dispatch(setHotelsDataSearch(info));

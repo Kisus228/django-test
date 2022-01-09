@@ -76,6 +76,8 @@ const HotelForm = (props) => {
                     option: selectedOption.value,
                     star: values.star,
                     conveniences: conveniences,
+                    parking: parking,
+                    wifi: wifi,
                 }
                 props.setHotelsTC(data);
             }}>
