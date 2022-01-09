@@ -15,11 +15,10 @@ const Hotel = (props) => {
         : Number(props.match.params.businessTripId);
 
     const [currentPage, setCurrentPage] = useState(1);
-    const pageSize = 25;
 
     useEffect(() => {
             const info = {...props.hotelsDataSearch};
-            info.offset = (currentPage - 1) * 25;
+            info.offset = (currentPage - 1) * props.pageSize;
             if (info.city !== undefined)
                 props.setHotelsTC(info);
         },
@@ -61,7 +60,7 @@ const Hotel = (props) => {
                                 <HotelConstructor {...hotel} key={index} onBooking={onBooking}/>)
                         : null
                 }
-                <Paginator count={props.count} pageSize={pageSize} currentPage={currentPage}
+                <Paginator count={props.count} pageSize={props.pageSize} currentPage={currentPage}
                            setCurrentPage={setCurrentPage}/>
             </div>
         </div>
@@ -73,6 +72,7 @@ const mapStateToProps = (state) => {
         hotels: state.hotelsData.hotels,
         hotelsDataSearch: state.hotelsData.hotelsDataSearch,
         count: state.hotelsData.count,
+        pageSize: state.hotelsData.pageSize,
         businessTrip: state.businessTripsData.businessTrip,
     }
 };

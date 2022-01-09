@@ -3,7 +3,7 @@ import React from "react";
 import cn from "classnames";
 
 const Paginator = (props) => {
-    const pagesCount = Math.ceil(props.count / props.pageSize);
+    const pagesCount = props.pageSize !== 0 ? Math.ceil(props.count / props.pageSize) : 0;
     const pages = [];
     if (pagesCount !== 0) {
         pages.push('<');

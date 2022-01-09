@@ -52,29 +52,27 @@ export const setTransportTC = (info) => async (dispatch) => {
     const data = [];
     console.log(info.stationT)
     console.log(info.stationF)
-    for (const option of info.type) {
-        let a = !!info.stationT ? info.stationT?.type : info.stationF?.type;
-        console.log(a)
-        if (!!a) {
-            if (a === 1)
-                data.push(await transportAPI.getRZD(info.cityT, info.cityF, info.stationT.value, info.stationF.value,
-                    info.stationT.code, info.stationF.code, info.date));
-            else
-                data.push(await transportAPI.getAviasales(info.cityT, info.cityF, info.stationT.value, info.stationF.value,
-                    info.date).then(res => res.data));
-        } else {
-            if (option.value === 1)
-                data.push(await transportAPI.getRZD(info.cityT, info.cityF, info.stationT.value, info.stationF.value,
-                    info.stationT.code, info.stationF.code, info.date));
-            else
-                data.push(await transportAPI.getAviasales(info.cityT, info.cityF, info.stationT.value, info.stationF.value,
-                    info.date).then(res => res.data));
+    let type = !!info.stationT ? info.stationT?.type : info.stationF?.type;
+    if (!!type) {
+        await pushAwait(data, info, type);
+    } else {
+        for (const option of info.type) {
+            await pushAwait(data, info, option.value);
         }
     }
     if (data.length !== 0) {
         dispatch(setTransport(data.flat()));
         dispatch(setTransportDataSearch(info));
     }
+}
+
+const pushAwait = async (data, info, option) => {
+    if (option === 1)
+        data.push(await transportAPI.getRZD(info.cityT, info.cityF, info.stationT.value, info.stationF.value,
+            info.stationT.code, info.stationF.code, info.date));
+    else
+        data.push(await transportAPI.getAviasales(info.cityT, info.cityF, info.stationT.value, info.stationF.value,
+            info.date).then(res => res.data));
 }
 
 export const initializeTransport = (cityFrom, cityTo, options) => (dispatch) => {

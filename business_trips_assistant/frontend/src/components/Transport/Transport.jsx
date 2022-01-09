@@ -29,10 +29,11 @@ const Transport = (props) => {
         {value: 0, label: 'Aviasales'}
     ]
 
-    const [selectedOption, setSelectedOption] = useState([options[0]]);
+    const [selectedOption, setSelectedOption] = useState([]);
 
     useEffect(() => {
             props.uninitializedSuccess();
+            props.uninitializedDataSuccess();
             props.uninitializedTransportSuccess();
         },
         // eslint-disable-next-line
