@@ -24,8 +24,7 @@ const HotelReducer = (state = initialState, action) => {
 export const setHotelsTC = (info) => async (dispatch) => {
     let data;
     if (info.option === 'booking')
-        data = await hotelsAPI.getBooking(info.city, info.offset, info.star, info.checkIn, info.checkOut,
-            info.conveniences);
+        data = await hotelsAPI.getBooking(info.city, info.offset, info.checkIn, info.checkOut, info.conveniences);
     if (info.option === 'airbnb')
         data = await hotelsAPI.getAirbnb(info.city, info.offset, info.checkIn, info.checkOut, info.wifi, info.parking);
     if (data !== undefined) {

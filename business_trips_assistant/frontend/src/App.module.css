@@ -86,3 +86,12 @@
     color: #8B8B8B;
     word-break: break-word;
 }
+
+.icon {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 80px;
+    background-image: url("./assets/icon.png");
+    background-color: transparent;
+}

@@ -50,8 +50,6 @@ const TransportReducer = (state = initialState, action) => {
 
 export const setTransportTC = (info) => async (dispatch) => {
     const data = [];
-    console.log(info.stationT)
-    console.log(info.stationF)
     let type = !!info.stationT ? info.stationT?.type : info.stationF?.type;
     if (!!type) {
         await pushAwait(data, info, type);
@@ -72,7 +70,7 @@ const pushAwait = async (data, info, option) => {
             info.stationT.code, info.stationF.code, info.date));
     else
         data.push(await transportAPI.getAviasales(info.cityT, info.cityF, info.stationT.value, info.stationF.value,
-            info.date).then(res => res.data));
+            info.date));
 }
 
 export const initializeTransport = (cityFrom, cityTo, options) => (dispatch) => {
@@ -104,10 +102,10 @@ const setStationsTC = (city, from) => async (dispatch) => {
 const setAirportsTC = (city, from) => async (dispatch) => {
     const data = await transportAPI.getCodeCityAviasales(city)
     if (data !== undefined) {
-        dispatch(setCodeCity(from ? SET_CITY_FROM : SET_CITY_TO, data.split(',')[0])); //todo: VsALT переделать, когда кирилл исправит
-        await transportAPI.getStationsAviasales(data.split(',')[0])
+        dispatch(setCodeCity(from ? SET_CITY_FROM : SET_CITY_TO, data[0])); //todo: VsALT переделать, когда кирилл исправит
+        await transportAPI.getStationsAviasales(data[0])
             .then(response => {
-                dispatch(setStations(from ? SET_STATIONS_FROM : SET_STATIONS_TO, response.split(',')
+                dispatch(setStations(from ? SET_STATIONS_FROM : SET_STATIONS_TO, response
                     .map(i => ({station: i, code: i, type: 0}))));
             })
     }

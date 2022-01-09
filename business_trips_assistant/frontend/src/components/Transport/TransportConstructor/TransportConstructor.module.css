@@ -29,6 +29,32 @@
     composes: button from "./../../../App.module.css";
 }
 
+.airplane {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    outline: none;
+    background-position: 0;
+}
+
+.train {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    outline: none;
+    background-position: -20px;
+}
+
+.icon {
+    float: left;
+    margin-right: 5px;
+    composes: icon from "../../../App.module.css";
+}
+
 
 
 

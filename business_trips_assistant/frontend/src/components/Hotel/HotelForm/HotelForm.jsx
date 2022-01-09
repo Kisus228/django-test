@@ -68,13 +68,14 @@ const HotelForm = (props) => {
                     conveniences.push("hotelfacility%3D2");
                 if (wifi)
                     conveniences.push("hotelfacility%3D107");
+                if (values.star !== '')
+                    conveniences.push(`class%3D${values.star}`);
                 const data = {
                     city: values.city,
                     checkIn: values.checkIn,
                     checkOut: values.checkOut,
                     offset: values.offset,
                     option: selectedOption.value,
-                    star: values.star,
                     conveniences: conveniences,
                     parking: parking,
                     wifi: wifi,

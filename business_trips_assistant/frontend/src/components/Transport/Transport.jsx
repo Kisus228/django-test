@@ -63,7 +63,7 @@ const Transport = (props) => {
             const dateArrival = data.trip.localDate1.split('.');
             const postData = {
                 idBT: id,
-                transport: data.transportDataSearch.type,
+                transport: data.trip.type,
                 priceTicket: 0,
                 isFirst: type,
                 transportNumber: data.trip.number,

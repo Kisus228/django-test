@@ -174,8 +174,8 @@ export const businessTripsAPI = {
 }
 
 export const hotelsAPI = {
-    async getBooking(city, offset, star, checkIn, checkOut, conveniences) {
-        const url = `/hotel/hotels_booking?city=${city}&offset=${offset}&star=${star}&check_in=${checkIn}` +
+    async getBooking(city, offset, checkIn, checkOut, conveniences) {
+        const url = `/hotel/hotels_booking?city=${city}&offset=${offset}&check_in=${checkIn}` +
         `&check_out=${checkOut}` + (conveniences.length !== 0 ? `&conveniences=${conveniences.join('%3B')}` : '');
         return await fetch(url)
             .then(response => response.json())
@@ -232,14 +232,14 @@ export const transportAPI = {
     async getCodeCityAviasales(city) {
         const url = `/aviasales/cities_list?prefix=${city}`
         return await fetch(url)
-            .then(response => response.text())
+            .then(response => response.json())
             .then(data => data)
             .catch(error => console.error(error))
     },
     async getStationsAviasales(code) {
         const url = `/aviasales/airports_list?cityName=${code}`
         return await fetch(url)
-            .then(response => response.text())
+            .then(response => response.json())
             .then(data => data)
             .catch(error => console.error(error))
     },

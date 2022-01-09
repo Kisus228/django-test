@@ -29,6 +29,13 @@
     composes: button from "./../../../App.module.css";
 }
 
+.icon {
+    width: 20px;
+    height: 20px;
+    background-position: -40px;
+    composes: icon from "./../../../App.module.css";
+}
+
 
 
 
