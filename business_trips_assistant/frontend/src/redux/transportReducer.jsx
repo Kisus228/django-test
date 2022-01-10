@@ -51,7 +51,7 @@ const TransportReducer = (state = initialState, action) => {
 export const setTransportTC = (info) => async (dispatch) => {
     const data = [];
     let type = !!info.stationT ? info.stationT?.type : info.stationF?.type;
-    if (!!type) {
+    if (!(isNaN(Number(type)))) {
         await pushAwait(data, info, type);
     } else {
         for (const option of info.type) {
@@ -66,11 +66,9 @@ export const setTransportTC = (info) => async (dispatch) => {
 
 const pushAwait = async (data, info, option) => {
     if (option === 1)
-        data.push(await transportAPI.getRZD(info.cityT, info.cityF, info.stationT.value, info.stationF.value,
-            info.stationT.code, info.stationF.code, info.date));
+        data.push(await transportAPI.getRZD(info.cityT, info.cityF, info.stationT.value, info.stationF.value, info.date));
     else
-        data.push(await transportAPI.getAviasales(info.cityT, info.cityF, info.stationT.value, info.stationF.value,
-            info.date));
+        data.push(await transportAPI.getAviasales(info.cityT, info.cityF, info.stationT.value, info.stationF.value, info.date));
 }
 
 export const initializeTransport = (cityFrom, cityTo, options) => (dispatch) => {

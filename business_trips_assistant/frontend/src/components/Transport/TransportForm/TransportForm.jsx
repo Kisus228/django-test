@@ -4,7 +4,7 @@ import {Formik, Form} from 'formik';
 import cn from "classnames";
 import TextInput from "../../Common/FormControl/TextInput";
 import {useState} from "react";
-import SelectInput from "../../Common/FormControl/SelectInput";
+import SelectInputWithIcon from "../../Common/FormControl/SelectInputWithIcon";
 
 const validate = (values) => {
     const errors = {};
@@ -20,12 +20,8 @@ const TransportForm = (props) => {
     const initialData = {
         toCity: props.direction === 'there' ? props.businessTrip.toCity : props.businessTrip.fromCity,
         fromCity: props.direction === 'there' ? props.businessTrip.fromCity : props.businessTrip.toCity,
-        toStation: '',
-        fromStation: '',
         type: '',
         date: '',
-        fromAnyStation: false,
-        toAnyStation: false,
     }
 
     const stationsFrom = props.stationsFrom?.map((station) => {
@@ -33,6 +29,7 @@ const TransportForm = (props) => {
                 label: station.station,
                 value: station.station,
                 code: station.code,
+                type: station.type,
             }
         })
 
@@ -58,8 +55,8 @@ const TransportForm = (props) => {
                 const info = {
                     cityT: values.toCity,
                     cityF: values.fromCity,
-                    stationT: selectedStationTo,
-                    stationF: selectedStationFrom,
+                    stationT: selectedStationTo !== null ? selectedStationTo : '',
+                    stationF: selectedStationFrom !== null ? selectedStationFrom : '',
                     date: values.date,
                     type: props.selectedOption,
                 }
@@ -91,7 +88,7 @@ const TransportForm = (props) => {
                     />
                 </div>
                 <div className={classes.row}>
-                    <SelectInput
+                    <SelectInputWithIcon
                         name="fromStation"
                         type="text"
                         label="Станция/Аэропорт"
@@ -103,7 +100,7 @@ const TransportForm = (props) => {
                         isClearable={true}
                         zind={5}
                     />
-                    <SelectInput
+                    <SelectInputWithIcon
                         name="toStation"
                         type="text"
                         label="Станция/Аэропорт"
@@ -116,7 +113,7 @@ const TransportForm = (props) => {
                     />
                 </div>
                 <div className={classes.row}>
-                    <SelectInput
+                    <SelectInputWithIcon
                         options={props.options}
                         classNamePrefix="select"
                         defaultValue={props.selectedOption}

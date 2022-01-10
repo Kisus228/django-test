@@ -193,14 +193,11 @@ export const hotelsAPI = {
 }
 
 export const transportAPI = {
-    async getRZD(cityT, cityF, stationT, stationF, codeST, codeSF, date) {
-        const url = [`/railways/list_trains?cityTo=${cityT}&cityFrom=${cityF}&date=${date}`,
-            stationT === '' || stationT === undefined ? '' : `&stationTo=${stationT}` ,
-            stationF === '' || stationF === undefined ?' ' : `&stationFrom=${stationF}`,
-            codeST === '' || codeST === undefined ? '' : `&codeStationTo=${codeST}`,
-            codeSF === '' || codeSF === undefined ? '' : `&codeStationFrom=${codeSF}`
-        ];
-        return await fetch(url.join(""))
+    async getRZD(cityT, cityF, stationT, stationF, date) {
+        const url = `/railways/list_trains?cityTo=${cityT}&cityFrom=${cityF}&date=${date}` +
+            (stationT === '' || stationT === undefined ? '' : `&stationTo=${stationT}`) +
+            (stationF === '' || stationF === undefined ? '' : `&stationFrom=${stationF}`);
+        return await fetch(url)
             .then(response => response.json())
             .then(data => data)
             .catch(error => console.error(error))
@@ -220,11 +217,10 @@ export const transportAPI = {
             .catch(error => console.error(error))
     },
     async getAviasales(cityT, cityF, stationT, stationF, date) {
-        const url = [`/aviasales/ticket_avia?cityTo=${cityT}&cityFrom=${cityF}&dateDepart=${date}`,
-            stationT === '' || stationT === undefined ? '' : `&airportTo=${stationT}` ,
-            stationF === '' || stationF === undefined ?' ' : `&airportFrom=${stationF}`,
-        ];
-        return await fetch(url.join(""))
+        const url = `/aviasales/ticket_avia?cityTo=${cityT}&cityFrom=${cityF}&dateDepart=${date}` +
+            (stationT === '' || stationT === undefined ? '' : `&airportTo=${stationT}`) +
+            (stationF === '' || stationF === undefined ? '' : `&airportFrom=${stationF}`);
+        return await fetch(url)
             .then(response => response.json())
             .then(data => data)
             .catch(error => console.error(error))

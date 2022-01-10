@@ -25,8 +25,8 @@ const Transport = (props) => {
     const direction = props.match.params.direction;
 
     const options = [
-        {value: 1, label: 'РЖД'},
-        {value: 0, label: 'Aviasales'}
+        {value: 1, label: 'РЖД', type: 1},
+        {value: 0, label: 'Aviasales', type: 0}
     ]
 
     const [selectedOption, setSelectedOption] = useState([]);
