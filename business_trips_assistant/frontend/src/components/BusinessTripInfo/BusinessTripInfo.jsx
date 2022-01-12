@@ -152,9 +152,15 @@ const BusinessTripInfo = (props) => {
                             <div className={classes.header}>
                                 Отчёт
                             </div>
-                            <a href='http://127.0.0.1:8000/account/some/' className={classes.footer}>
-                                Сформировать отчёт
-                            </a>
+                            {
+                                props.businessTrip?.hotel?.name === undefined
+                                    ? <div className={classes.footer}>
+                                        Сформировать отчёт
+                                    </div>
+                                    : <a href={`http://127.0.0.1:8000/account/some/?idBT=${id}`} className={classes.footer}>
+                                        Сформировать отчёт
+                                    </a>
+                            }
                         </div>
                     </div>
                     : null
