@@ -409,11 +409,11 @@ def some_view(request):
 
     p.line(p_start, 1830, 600, 1830)
 
-    h_t = hotel[0]
-
     p.drawString(270, 1800, 'Отель')
 
     if hotel:
+        h_t = hotel[0]
+
         p.drawString(p_start, 1765, 'Стоимость:')
         p.drawString(180, 1765, f'{h_t.price:.2f} \u20bd')
 
@@ -468,18 +468,22 @@ def some_view(request):
     p.line(p_start, 1335, 600, 1335)
 
     p.drawString(180, 1305, 'Затраты во время командировки')
+    position = 1280
     for i in range(len(cheques)):
-        p.drawString(p_start, 1280, 'Сумма:')
-        p.drawString(210, 1280, f'{cheques[i].amount:.2f} \u20bd')
-
-        p.drawString(p_start, 1255, 'Дата:')
-        p.drawString(210, 1255, f'{cheques[i].date_time.strftime("%d.%m.%Y")}')
-
-        p.drawString(p_start, 1230, 'Товары:')
+        p.drawString(p_start, position, 'Сумма:')
+        p.drawString(210, position, f'{cheques[i].amount:.2f} \u20bd')
+        position -= 25
+        p.drawString(p_start, position, 'Дата:')
+        p.drawString(210, position, f'{cheques[i].date_time.strftime("%d.%m.%Y")}')
+        position -= 25
+        p.drawString(p_start, position, 'Товары:')
 
         report = cheques[i].report.split('\n')
+
         for j in range(len(report)):
-            p.drawString(210, 1230-25*j, f'{report[j][:-1]}')
+            p.drawString(210, position, f'{report[j][:-1]}')
+            position -= 25
+        position -= 25
 
 
     # Close the PDF object cleanly, and we're done.
