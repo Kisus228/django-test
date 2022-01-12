@@ -4,7 +4,7 @@ import {Formik, Form} from 'formik';
 import cn from "classnames";
 import TextInput from "../../Common/FormControl/TextInput";
 import {useState} from "react";
-import SelectInput from "../../Common/FormControl/SelectInput";
+import SelectInputWithIcon from "../../Common/FormControl/SelectInputWithIcon";
 
 const validate = (values) => {
     const errors = {};
@@ -20,26 +20,16 @@ const TransportForm = (props) => {
     const initialData = {
         toCity: props.direction === 'there' ? props.businessTrip.toCity : props.businessTrip.fromCity,
         fromCity: props.direction === 'there' ? props.businessTrip.fromCity : props.businessTrip.toCity,
-        toStation: '',
-        fromStation: '',
         type: '',
         date: '',
-        fromAnyStation: false,
-        toAnyStation: false,
     }
-
-    const options = [
-        {value: 1, label: 'РЖД'},
-        {value: 0, label: 'Aviasales'}
-    ]
-
-    const [selectedOption, setSelectedOption] = useState(options[0]);
 
     const stationsFrom = props.stationsFrom?.map((station) => {
             return {
                 label: station.station,
                 value: station.station,
                 code: station.code,
+                type: station.type,
             }
         })
 
@@ -50,6 +40,7 @@ const TransportForm = (props) => {
                 label: station.station,
                 value: station.station,
                 code: station.code,
+                type: station.type,
             }
         })
 
@@ -64,14 +55,12 @@ const TransportForm = (props) => {
                 const info = {
                     cityT: values.toCity,
                     cityF: values.fromCity,
-                    stationT: selectedStationTo?.value,
-                    stationF: selectedStationFrom?.value,
-                    codeST: selectedStationTo?.code,
-                    codeSF: selectedStationFrom?.code,
+                    stationT: selectedStationTo !== null ? selectedStationTo : '',
+                    stationF: selectedStationFrom !== null ? selectedStationFrom : '',
                     date: values.date,
-                    type: selectedOption?.value,
+                    type: props.selectedOption,
                 }
-                props.setRZDTC(info);
+                props.setTransportTC(info);
             }}>
             <Form className={classes.body_container}>
                 <div className={classes.first_row}>
@@ -99,7 +88,7 @@ const TransportForm = (props) => {
                     />
                 </div>
                 <div className={classes.row}>
-                    <SelectInput
+                    <SelectInputWithIcon
                         name="fromStation"
                         type="text"
                         label="Станция/Аэропорт"
@@ -111,7 +100,7 @@ const TransportForm = (props) => {
                         isClearable={true}
                         zind={5}
                     />
-                    <SelectInput
+                    <SelectInputWithIcon
                         name="toStation"
                         type="text"
                         label="Станция/Аэропорт"
@@ -124,11 +113,12 @@ const TransportForm = (props) => {
                     />
                 </div>
                 <div className={classes.row}>
-                    <SelectInput
-                        options={options}
+                    <SelectInputWithIcon
+                        options={props.options}
                         classNamePrefix="select"
-                        defaultValue={selectedOption}
-                        onChange={setSelectedOption}
+                        defaultValue={props.selectedOption}
+                        onChange={props.setSelectedOption}
+                        isMulti
                         name="type"
                         type="text"
                         placeholder="Вид транспорта..."

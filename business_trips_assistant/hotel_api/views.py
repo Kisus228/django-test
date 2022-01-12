@@ -19,8 +19,10 @@ def get_hotels_booking_json(request):
     star = request.GET.get('star')
     check_in = request.GET['check_in']
     check_out = request.GET['check_out']
+    conveniences = request.GET.get('conveniences')
     hotel, count_hotels = get_hotels_booking(star=star, offset=offset,
-                                             city=city, check_in=check_in, check_out=check_out)
+                                             city=city, check_in=check_in,
+                                             check_out=check_out, conveniences=conveniences)
     answer = {'count_hotels': count_hotels, 'hotels': hotel}
     return Response(answer)
 
@@ -39,7 +41,10 @@ def get_hotels_airbnb_json(request):
     offset = request.GET.get('offset', 0)
     check_in = request.GET['check_in']
     check_out = request.GET['check_out']
+    parking = request.GET.get('parking')
+    wifi = request.GET.get('wifi')
     hotel, count_hotels = get_hotels_airbnb(offset=offset, city=city,
-                                            check_in=check_in, check_out=check_out)
+                                            check_in=check_in, check_out=check_out,
+                                            parking=parking, wifi=wifi)
     answer = {'count_hotels': count_hotels, 'hotels': hotel}
     return Response(answer)

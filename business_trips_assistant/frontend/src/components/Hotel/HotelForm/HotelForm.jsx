@@ -6,6 +6,7 @@ import TextInput from "../../Common/FormControl/TextInput";
 import SelectInput from "../../Common/FormControl/SelectInput";
 import {useState} from "react";
 import SmartTextInput from "../../Common/FormControl/SmartTextInput";
+import CheckBox from "../../Common/FormControl/CheckBox";
 
 const validate = (values) => {
     const errors = {};
@@ -24,6 +25,14 @@ const validate = (values) => {
         errors.checkOut = 'Обязательно';
     }
 
+    if (values.checkIn >= values.checkOut) {
+        errors.checkOut = 'Выберите корректную дату';
+    }
+
+    if (values.star !== '' && (values.star < 0 || values.star > 5)) {
+        errors.star = 'Err';
+    }
+
     return errors;
 };
 
@@ -35,6 +44,8 @@ const HotelForm = (props) => {
         offset: props.currentPage,
         option: '',
         star: '',
+        parking: '',
+        wifi: '',
     }
 
     const options = [
@@ -43,6 +54,8 @@ const HotelForm = (props) => {
     ]
 
     const [selectedOption, setSelectedOption] = useState(options[0]);
+    const [parking, setParking] = useState(false);
+    const [wifi, setWifi] = useState(false);
 
     return (
         <Formik
@@ -50,13 +63,22 @@ const HotelForm = (props) => {
             validate={validate}
 
             onSubmit={(values) => {
+                const conveniences = [];
+                if (parking)
+                    conveniences.push("hotelfacility%3D2");
+                if (wifi)
+                    conveniences.push("hotelfacility%3D107");
+                if (values.star !== '')
+                    conveniences.push(`class%3D${values.star}`);
                 const data = {
                     city: values.city,
                     checkIn: values.checkIn,
                     checkOut: values.checkOut,
                     offset: values.offset,
                     option: selectedOption.value,
-                    star: values.star,
+                    conveniences: conveniences,
+                    parking: parking,
+                    wifi: wifi,
                 }
                 props.setHotelsTC(data);
             }}>
@@ -104,9 +126,20 @@ const HotelForm = (props) => {
                         <SmartTextInput
                             name="star"
                             type="number"
-                            placeholder="Кол-во звёзд..."
                             label="Звёзды"
                             disabled={selectedOption.value === "airbnb"}
+                        />
+                        <CheckBox
+                            name="parking"
+                            type="checkbox"
+                            label="Парковка"
+                            onChange={() => setParking(!parking)}
+                        />
+                        <CheckBox
+                            name="wifi"
+                            type="checkbox"
+                            label="Wi-Fi"
+                            onChange={() => setWifi(!wifi)}
                         />
                         <button type="submit" className={cn(classes.button, classes.save)}>
                             Поиск

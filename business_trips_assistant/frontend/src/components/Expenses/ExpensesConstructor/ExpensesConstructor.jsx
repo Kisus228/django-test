@@ -1,8 +1,4 @@
 import classes from "./ExpensesConstructor.module.css";
-import cn from "classnames";
-import {NavLink} from "react-router-dom";
-import {useState} from "react";
-import Window from "../../Common/Window/Window";
 
 const ExpensesConstructor = (props) => {
     const dateTime = props.expenses.datetime.split(' ');

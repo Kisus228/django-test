@@ -134,6 +134,7 @@ def set_train_information(response_json):
                 for info in value:
                     list_station = {'fromCode': answer['fromCode'], 'whereCode': answer['whereCode']}
                     train_number = info['number']
+                    list_station['type'] = 1
                     list_station['number'] = train_number
                     list_station['station0'] = info['station0']
                     list_station['station1'] = info['station1']

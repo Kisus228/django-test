@@ -1,5 +1,26 @@
 import classes from "./TextInput.module.css";
 import Select from "react-select";
+import icon from "../../../assets/icon.png"
+
+const dot = (type = null) => {
+    if (type === null) return null;
+    return (
+        {
+            display: 'flex',
+            ':before': {
+                backgroundRepeat: "no-repeat",
+                backgroundSize: 80,
+                backgroundPosition: -20 * (type.type),
+                backgroundImage: `url(${icon})`,
+                backgroundColor: "transparent",
+                content: '" "',
+                marginRight: 5,
+                marginTop: 2,
+                height: 20,
+                width: 20,
+            },
+        })
+};
 
 const SelectInput = ({label, ...props}) => {
     const zind = props.zind !== undefined ? props.zind : 0;
@@ -9,8 +30,9 @@ const SelectInput = ({label, ...props}) => {
                 <label className={classes.label}>{label}</label>
                 <Select
                     styles={{
-                        option: (styles) => ({
+                        option: (styles, {data}) => ({
                             ...styles,
+                            ...dot(data),
                             '&:last-of-type': {
                                 borderBottomLeftRadius: 15,
                                 borderBottomRightRadius: 15,

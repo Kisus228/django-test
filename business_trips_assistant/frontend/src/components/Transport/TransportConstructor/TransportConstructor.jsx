@@ -1,6 +1,7 @@
 import classes from "./TransportConstructor.module.css";
 import {useState} from "react";
 import Window from "../../Common/Window/Window";
+import cn from "classnames";
 
 const TransportConstructor = (props) => {
     const [visibility, setVisibility] = useState(false);
@@ -16,12 +17,17 @@ const TransportConstructor = (props) => {
         }
     };
 
+    const type = props.trip.type === 0 ? "самолёт" : "поезд";
     return (
         <div className={classes.business_trip}>
-            <Window label={`Вы купили билет на поезд "${props.trip.number}"?`}
+            <Window label={`Вы купили билет на ${type} "${props.trip.number}"?`}
                     visibility={visibility} setVisibility={setVisibility} action={props.onBuying}
                     item={props} agree="Да" disagree="Нет"/>
             <div>
+                <div className={cn(classes.icon, {
+                    [classes.airplane]: props.trip.type === 0,
+                    [classes.train]: props.trip.type === 1,
+                })}/>
                 <div className={classes.name}>
                     {props.trip.number} {props.transportDataSearch.cityF} - {props.transportDataSearch.cityT}
                 </div>

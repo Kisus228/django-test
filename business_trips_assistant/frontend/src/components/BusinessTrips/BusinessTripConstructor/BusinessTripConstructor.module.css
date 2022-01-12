@@ -29,15 +29,11 @@
     box-sizing: border-box;
     border: 0;
     outline: none;
-    background-position: -20px;}
+    background-position: -20px;
+}
 
 .icon {
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-size: 60px;
-    background-image: url("../../../assets/icon.png");
-    background-color: transparent;
+    composes: icon from "../../../App.module.css";
 }
 
 .name {

@@ -2,7 +2,6 @@ import {Formik, Form} from 'formik';
 import classes from "./Login.module.css";
 import TextInput from "../Common/FormControl/TextInput";
 import {NavLink} from "react-router-dom";
-import {getAuthMeTC, postAuthLoginTC} from "../../redux/authReducer";
 
 const validate = (values) => {
     const errors = {};

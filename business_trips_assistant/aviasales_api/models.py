@@ -5,6 +5,7 @@ class City(models.Model):
     """Таблица с названиями городов, расположенных в РФ, и их IATA-кодами"""
     code = models.CharField(max_length=3, primary_key=True)
     city = models.CharField(max_length=250)
+    time_zone = models.CharField(max_length=100)
 
 
 class Airport(models.Model):

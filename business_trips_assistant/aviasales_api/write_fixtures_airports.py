@@ -20,7 +20,7 @@ def write_fixtures():
     with open('D:\\Users\\Desktop\\airports.json', 'r', encoding='utf-8') as airports_json:
         airports_info = json.load(airports_json)
         for airport_info in airports_info:
-            if airport_info['country_code'] == 'RU':
+            if airport_info['country_code'] == 'RU' and 'ВОКЗАЛ' not in str(airport_info['name']).upper():
                 dict_json = {'model': 'aviasales_api.airport',
                              'pk': airport_info['code'].upper(),
                              'fields': {

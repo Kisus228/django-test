@@ -174,8 +174,17 @@ export const businessTripsAPI = {
 }
 
 export const hotelsAPI = {
-    async getHotels(city, offset, star, option, checkIn, checkOut) {
-        const url = `/hotel/hotels_${option}?city=${city}&offset=${offset}&star=${star}&check_in=${checkIn}&check_out=${checkOut}`;
+    async getBooking(city, offset, checkIn, checkOut, conveniences) {
+        const url = `/hotel/hotels_booking?city=${city}&offset=${offset}&check_in=${checkIn}` +
+        `&check_out=${checkOut}` + (conveniences.length !== 0 ? `&conveniences=${conveniences.join('%3B')}` : '');
+        return await fetch(url)
+            .then(response => response.json())
+            .then(data => data)
+            .catch(error => console.error(error))
+    },
+    async getAirbnb(city, offset, checkIn, checkOut, wifi, parking) {
+        const url = `/hotel/hotels_airbnb?city=${city}&offset=${offset}&check_in=${checkIn}&check_out=${checkOut}`
+            + (wifi ? '&wifi=1' : '') + (parking ? 'parking=1' : '');
         return await fetch(url)
             .then(response => response.json())
             .then(data => data)
@@ -184,27 +193,47 @@ export const hotelsAPI = {
 }
 
 export const transportAPI = {
-    async getRZD(cityT, cityF, stationT, stationF, codeST, codeSF, date) {
-        const url = [`/railways/list_trains?cityTo=${cityT}&cityFrom=${cityF}&date=${date}`,
-            stationT === '' || stationT === undefined ? '' : `&stationTo=${stationT}` ,
-            stationF === '' || stationF === undefined ?' ' : `&stationFrom=${stationF}`,
-            codeST === '' || codeST === undefined ? '' : `&codeStationTo=${codeST}`,
-            codeSF === '' || codeSF === undefined ? '' : `&codeStationFrom=${codeSF}`
-        ];
-        return await fetch(url.join(""))
+    async getRZD(cityT, cityF, stationT, stationF, date) {
+        const url = `/railways/list_trains?cityTo=${cityT}&cityFrom=${cityF}&date=${date}` +
+            (stationT === '' || stationT === undefined ? '' : `&stationTo=${stationT}`) +
+            (stationF === '' || stationF === undefined ? '' : `&stationFrom=${stationF}`);
+        return await fetch(url)
             .then(response => response.json())
             .then(data => data)
             .catch(error => console.error(error))
     },
-    async getCodeCity(city) {
+    async getCodeCityRZD(city) {
         const url = `/railways/cities_list?prefix=${city}`
         return await fetch(url)
             .then(response => response.json())
             .then(data => data)
             .catch(error => console.error(error))
     },
-    async getStations(code) {
+    async getStationsRZD(code) {
         const url = `/railways/stations_list?code=${code}`
+        return await fetch(url)
+            .then(response => response.json())
+            .then(data => data)
+            .catch(error => console.error(error))
+    },
+    async getAviasales(cityT, cityF, stationT, stationF, date) {
+        const url = `/aviasales/ticket_avia?cityTo=${cityT}&cityFrom=${cityF}&dateDepart=${date}` +
+            (stationT === '' || stationT === undefined ? '' : `&airportTo=${stationT}`) +
+            (stationF === '' || stationF === undefined ? '' : `&airportFrom=${stationF}`);
+        return await fetch(url)
+            .then(response => response.json())
+            .then(data => data)
+            .catch(error => console.error(error))
+    },
+    async getCodeCityAviasales(city) {
+        const url = `/aviasales/cities_list?prefix=${city}`
+        return await fetch(url)
+            .then(response => response.json())
+            .then(data => data)
+            .catch(error => console.error(error))
+    },
+    async getStationsAviasales(code) {
+        const url = `/aviasales/airports_list?cityName=${code}`
         return await fetch(url)
             .then(response => response.json())
             .then(data => data)

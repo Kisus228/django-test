@@ -22,6 +22,8 @@ from itertools import groupby
 import io
 from django.http import FileResponse
 from reportlab.pdfgen import canvas
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 
 
 class RegisterUserView(CreateAPIView):
@@ -379,11 +381,110 @@ def some_view(request):
     buffer = io.BytesIO()
 
     # Create the PDF object, using the buffer as its "file."
-    p = canvas.Canvas(buffer)
+    p = canvas.Canvas(buffer, pagesize=(650.0, 2000.0))
 
     # Draw things on the PDF. Here's where the PDF generation happens.
     # See the ReportLab documentation for the full list of functionality.
-    p.drawString(100, 100, "Hello world.")
+
+    id_b_t = request.GET['idBT']
+    b_t = BusinessTrip.objects.get(pk=id_b_t)
+
+    trip = Trip.objects.filter(business_trip_id=b_t.id)
+    cheques = Cheque.objects.filter(business_trip_id=b_t.id)
+    hotel = Hotel.objects.filter(business_trip_id=b_t.pk) # Если пустой список, то нет инфы об отеле
+
+    p_start = 50
+
+    p.setTitle('Отчет')
+    pdfmetrics.registerFont(TTFont('Verdana', 'Verdana.ttf'))
+    p.setFont("Verdana", 16)
+
+    p.drawString(270, 1950, "Отчет")
+
+    p.drawString(p_start, 1880, 'Откуда:')
+    p.drawString(400, 1880, b_t.from_city)
+
+    p.drawString(p_start, 1855, 'Куда:')
+    p.drawString(400, 1855, b_t.to_city)
+
+    p.line(p_start, 1830, 600, 1830)
+
+    p.drawString(270, 1800, 'Отель')
+
+    if hotel:
+        h_t = hotel[0]
+
+        p.drawString(p_start, 1765, 'Стоимость:')
+        p.drawString(180, 1765, f'{h_t.price:.2f} \u20bd')
+
+        p.drawString(p_start, 1740, 'Название:')
+        p.drawString(180, 1740, f'{h_t.name}')
+
+        p.drawString(p_start, 1715, 'Заселение:')
+        p.drawString(180, 1715, f'{h_t.date_check_in.strftime("%d.%m.%Y")}')
+
+        p.drawString(p_start, 1690, 'Выселение:')
+        p.drawString(180, 1690, f'{h_t.date_check_out.strftime("%d.%m.%Y")}')
+
+    p.line(p_start, 1665, 600, 1665)
+
+    if trip:
+        for i in range(2):
+            t_t = trip[i]
+            name_transport = 'Поезд' if t_t.transport == 1 else 'Самолет'
+            if t_t.is_first == 0:
+                p.drawString(270, 1635, 'Транспорт')
+
+                p.drawString(p_start, 1610, 'Дата отправление:')
+                p.drawString(210, 1610, f'{t_t.date_departure.strftime("%d.%m.%Y")}')
+
+                p.drawString(p_start, 1585, 'Дата прибытия:')
+                p.drawString(210, 1585, f'{t_t.date_arrival.strftime("%d.%m.%Y")}')
+
+                p.drawString(p_start, 1560, f'{name_transport}:')
+                p.drawString(210, 1560, f'{t_t.transport_number}')
+
+                p.drawString(p_start, 1535, 'Отправление:')
+                p.drawString(210, 1535, f'{t_t.station_from}')
+
+                p.drawString(p_start, 1510, 'Прибытие:')
+                p.drawString(210, 1510, f'{t_t.station_to}')
+            else:
+                p.drawString(p_start, 1460, 'Дата отправление:')
+                p.drawString(210, 1460, f'{t_t.date_departure.strftime("%d.%m.%Y")}')
+
+                p.drawString(p_start, 1435, 'Дата прибытия:')
+                p.drawString(210, 1435, f'{t_t.date_arrival.strftime("%d.%m.%Y")}')
+
+                p.drawString(p_start, 1410, f'{name_transport}:')
+                p.drawString(210, 1410, f'{t_t.transport_number}')
+
+                p.drawString(p_start, 1385, 'Отправление:')
+                p.drawString(210, 1385, f'{t_t.station_from}')
+
+                p.drawString(p_start, 1360, 'Прибытие:')
+                p.drawString(210, 1360, f'{t_t.station_to}')
+
+    p.line(p_start, 1335, 600, 1335)
+
+    p.drawString(180, 1305, 'Затраты во время командировки')
+    position = 1280
+    for i in range(len(cheques)):
+        p.drawString(p_start, position, 'Сумма:')
+        p.drawString(210, position, f'{cheques[i].amount:.2f} \u20bd')
+        position -= 25
+        p.drawString(p_start, position, 'Дата:')
+        p.drawString(210, position, f'{cheques[i].date_time.strftime("%d.%m.%Y")}')
+        position -= 25
+        p.drawString(p_start, position, 'Товары:')
+
+        report = cheques[i].report.split('\n')
+
+        for j in range(len(report)):
+            p.drawString(210, position, f'{report[j][:-1]}')
+            position -= 25
+        position -= 25
+
 
     # Close the PDF object cleanly, and we're done.
     p.showPage()
@@ -392,4 +493,4 @@ def some_view(request):
     # FileResponse sets the Content-Disposition header so that browsers
     # present the option to save the file.
     buffer.seek(0)
-    return FileResponse(buffer, as_attachment=True, filename='hello.pdf')
+    return FileResponse(buffer, as_attachment=True, filename='Отчет.pdf')

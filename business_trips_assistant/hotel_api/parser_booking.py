@@ -32,13 +32,11 @@ def get_params(kwargs):
     params['ssne_untouched'] = city
     offset = kwargs.get('offset')
     params['offset'] = offset
-    star = kwargs['star']
-    if star is not None:
-        params['nflt'] = f'class%3D{star}'
     date_check_in = kwargs['check_in'].split('-')
     date_check_out = kwargs['check_out'].split('-')
     set_date('checkin_year', 'checkin_month', 'checkin_monthday', date_check_in, params)
     set_date('checkout_year', 'checkout_month', 'checkout_monthday', date_check_out, params)
+    params['nflt'] = kwargs['conveniences']
     return params
 
 
