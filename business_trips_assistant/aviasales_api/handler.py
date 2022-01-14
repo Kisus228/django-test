@@ -1,7 +1,9 @@
 """Модуль для работы с API Aviasales"""
+import os
 import requests
 import arrow
 from .models import City, Airport
+from dotenv import load_dotenv
 
 
 def get_code_city(name_city):
@@ -48,8 +50,10 @@ def get_request(name_city_departure, name_city_arrival, depart_date, name_airpor
     if departure_point_code is None or arrival_point_code is None:
         return []
 
+    load_dotenv()
+
     url = "https://api.travelpayouts.com/aviasales/v3/prices_for_dates"
-    my_token = '80e3bc9df1061b7e7e683428c7df0b8a'
+    my_token = os.getenv('AVIASALES_TOKEN')
     headers = {'x-access-token': my_token}
     querystring = {"origin": departure_point_code,
                    "destination": arrival_point_code,
