@@ -32,7 +32,7 @@ def get_city_by_prefix(request):
     Returns: список городов начинающихся на prefix
     """
     prefix = request.GET.get('prefix').upper()
-    cities = [c.city for c in City.objects.filter(city__startswith=prefix)]
+    cities = [{'city': c.city, 'cityCode': c.code} for c in City.objects.filter(city__startswith=prefix)]
     return Response(cities)
 
 
@@ -41,9 +41,10 @@ def get_airport_by_city(request):
     """
     Метод находит аэропорты в заданном городе
     Args:
-        request: Request содержит название города
+        request: Request содержит IATA-код города
     Returns: список аэропортов в указанном городе
     """
-    city_name = request.GET.get('cityName').upper()
-    airports = [a.airport for a in Airport.objects.filter(city=city_name)]
+    city_code = request.GET.get('cityCode').upper()
+    city_name = City.objects.get(code=city_code).city
+    airports = [{'airport': a.airport, 'airportCode': a.code} for a in Airport.objects.filter(city=city_name)]
     return Response(airports)

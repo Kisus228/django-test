@@ -11,8 +11,8 @@ def get_code_city(name_city):
         name_city: содержит название города на русском языке
     Returns: код города в формате IATA
     """
-    city_inf = City.objects.get(city=name_city.upper())
-    return city_inf.code
+    return None if not City.objects.filter(city=name_city.upper()).exists()\
+        else City.objects.get(city=name_city.upper()).code
 
 
 def get_code_airport(name_airport):
@@ -22,11 +22,12 @@ def get_code_airport(name_airport):
         name_airport: содержит название аэропорта на русском языке
     Returns: код аэропорта в формате IATA
     """
-    airport_inf = Airport.objects.get(airport=name_airport.upper())
-    return airport_inf.code
+    return None if not Airport.objects.filter(airport=name_airport.upper()).exists()\
+        else Airport.objects.get(airport=name_airport.upper()).code
 
 
-def get_request(name_city_departure, name_city_arrival, depart_date, name_airport_departure, name_airport_arrival, is_direct="true"):
+def get_request(name_city_departure, name_city_arrival, depart_date, name_airport_departure, name_airport_arrival,
+                is_direct="true"):
     """
     Метод отправляет запрос на API Aviasales и получает информацию
     о самых дешёвых билетах на рейс с указанными параметрами
@@ -39,8 +40,13 @@ def get_request(name_city_departure, name_city_arrival, depart_date, name_airpor
         is_direct: поиск рейсов без пересадок
     Returns: JSON файл, содержащий информацию о рейсах
     """
-    departure_point_code = get_code_airport(name_airport_departure) if name_airport_departure is not None else get_code_city(name_city_departure)
-    arrival_point_code = get_code_airport(name_airport_arrival) if name_airport_arrival is not None else get_code_city(name_city_arrival)
+    departure_point_code = get_code_airport(
+        name_airport_departure) if name_airport_departure is not None else get_code_city(name_city_departure)
+    arrival_point_code = get_code_airport(name_airport_arrival) if name_airport_arrival is not None else get_code_city(
+        name_city_arrival)
+
+    if departure_point_code is None or arrival_point_code is None:
+        return []
 
     url = "https://api.travelpayouts.com/aviasales/v3/prices_for_dates"
     my_token = '80e3bc9df1061b7e7e683428c7df0b8a'
@@ -57,10 +63,13 @@ def get_request(name_city_departure, name_city_arrival, depart_date, name_airpor
 
 
 def get_processed_response(response):
+    if not response:
+        return []
+
     response = response.json()
 
     if not response['success'] or response['data'] == []:
-        return {}
+        return []
 
     processed_response = []
     for flight_data in response['data']:
