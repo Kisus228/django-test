@@ -16,9 +16,12 @@
     - NAME_DATA_BASE - название базы данных
     - USER_DATA_BASE - имя пользователя базы данных
     - HOST_DATA_BASE - host базы данных
-    - PORT_DATA_BASE - порт базы данных 
+    - PORT_DATA_BASE - порт базы данных
+    - AVIASALES_TOKEN - токен для запросов к API Aviasales
 
 
 6. Применить фиксутры c помощью команд:
     - python manage.py loaddata city.json
     - python manage.py loaddata station.json
+    - python manage.py loaddata cities.json
+    - python manage.py loaddata airports.json
