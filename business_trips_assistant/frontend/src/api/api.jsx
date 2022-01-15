@@ -233,7 +233,7 @@ export const transportAPI = {
             .catch(error => console.error(error))
     },
     async getStationsAviasales(code) {
-        const url = `/aviasales/airports_list?cityName=${code}`
+        const url = `/aviasales/airports_list?cityCode=${code}`
         return await fetch(url)
             .then(response => response.json())
             .then(data => data)

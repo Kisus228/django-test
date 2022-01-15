@@ -100,11 +100,11 @@ const setStationsTC = (city, from) => async (dispatch) => {
 const setAirportsTC = (city, from) => async (dispatch) => {
     const data = await transportAPI.getCodeCityAviasales(city)
     if (data !== undefined) {
-        dispatch(setCodeCity(from ? SET_CITY_FROM : SET_CITY_TO, data[0])); //todo: VsALT переделать, когда кирилл исправит
-        await transportAPI.getStationsAviasales(data[0])
+        dispatch(setCodeCity(from ? SET_CITY_FROM : SET_CITY_TO, data[0].cityCode));
+        await transportAPI.getStationsAviasales(data[0].cityCode)
             .then(response => {
                 dispatch(setStations(from ? SET_STATIONS_FROM : SET_STATIONS_TO, response
-                    .map(i => ({station: i, code: i, type: 0}))));
+                    .map(i => ({station: i.airport, code: i.airportCode, type: 0}))));
             })
     }
 }
