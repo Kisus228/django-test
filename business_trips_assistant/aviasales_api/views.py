@@ -2,8 +2,7 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .handler import get_request, get_processed_response
-from railways_api.models import City as City_rzd
-from .models import City, Airport
+from .models import City_for_avia, Airport
 
 
 @api_view()
@@ -33,8 +32,8 @@ def get_city_by_prefix(request):
     Returns: список городов начинающихся на prefix
     """
     prefix = request.GET.get('prefix').upper()
-    cities = [{'city': c.city, 'cityCode': City_rzd.objects.filter(city=c.city)[0].id}
-              for c in City.objects.filter(city__startswith=prefix) if City_rzd.objects.filter(city=c.city).exists()]
+    cities = [{'city': c.city, 'cityCode': c.city_general.id}
+              for c in City_for_avia.objects.filter(city__startswith=prefix) if c.city_general is not None]
     return Response(cities)
 
 
@@ -46,7 +45,7 @@ def get_airport_by_city(request):
         request: Request содержит IATA-код города
     Returns: список аэропортов в указанном городе
     """
-    city_code = request.GET.get('cityCode').upper()
-    city_name = City_rzd.objects.filter(id=city_code)[0].city
+    city_code = request.GET.get('cityCode')
+    city_name = City_for_avia.objects.filter(city_general=city_code)[0].city
     airports = [{'airport': a.airport, 'airportCode': a.code} for a in Airport.objects.filter(city=city_name)]
     return Response(airports)

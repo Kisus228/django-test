@@ -1,6 +1,6 @@
 import json
 from django.core.exceptions import ObjectDoesNotExist
-from .models import City
+from .models import City_for_avia
 
 
 # python manage.py loaddata airports.json чтобы применить фикстуры
@@ -8,7 +8,7 @@ from .models import City
 
 def get_city_name(code):
     try:
-        city_inf = City.objects.get(code=code.upper())
+        city_inf = City_for_avia.objects.get(code=code.upper())
         return city_inf.city.upper()
     except ObjectDoesNotExist:
         return 'none'

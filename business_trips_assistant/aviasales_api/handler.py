@@ -2,7 +2,7 @@
 import os
 import requests
 import arrow
-from .models import City, Airport
+from .models import City_for_avia, Airport
 from dotenv import load_dotenv
 
 
@@ -13,8 +13,8 @@ def get_code_city(name_city):
         name_city: содержит название города на русском языке
     Returns: код города в формате IATA
     """
-    return None if not City.objects.filter(city=name_city.upper()).exists()\
-        else City.objects.get(city=name_city.upper()).code
+    return None if not City_for_avia.objects.filter(city=name_city.upper()).exists()\
+        else City_for_avia.objects.get(city=name_city.upper()).code
 
 
 def get_code_airport(name_airport):
@@ -77,8 +77,8 @@ def get_processed_response(response):
 
     processed_response = []
     for flight_data in response['data']:
-        tz0 = City.objects.get(code=flight_data['origin']).time_zone
-        tz1 = City.objects.get(code=flight_data['destination']).time_zone
+        tz0 = City_for_avia.objects.get(code=flight_data['origin']).time_zone
+        tz1 = City_for_avia.objects.get(code=flight_data['destination']).time_zone
         dt0_local = arrow.get(flight_data['departure_at'], tzinfo=tz0)
         dt1_local = dt0_local.shift(minutes=flight_data['duration']).to(tz1)
         delta_tz0 = int(arrow.get(dt0_local.strftime('%z'), '+HHmm').format('HH')) - 3

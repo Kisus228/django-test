@@ -1,9 +1,11 @@
 from django.db import models
+from railways_api.models import City
 
 
-class City(models.Model):
+class City_for_avia(models.Model):
     """Таблица с названиями городов, расположенных в РФ, и их IATA-кодами"""
     code = models.CharField(max_length=3, primary_key=True)
+    city_general = models.ForeignKey(City, on_delete=models.SET_NULL, null=True)
     city = models.CharField(max_length=250)
     time_zone = models.CharField(max_length=100)
 

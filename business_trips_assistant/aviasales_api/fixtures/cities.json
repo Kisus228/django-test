@@ -1,1554 +1,1748 @@
 [
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "MRV",
         "fields": {
             "city": "МИНЕРАЛЬНЫЕ ВОДЫ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 407
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "VKT",
         "fields": {
             "city": "ВОРКУТА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 129
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KLF",
         "fields": {
             "city": "КАЛУГА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 251
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "TJM",
         "fields": {
             "city": "ТЮМЕНЬ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 686
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "OSW",
         "fields": {
             "city": "ОРСК",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 493
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "JOK",
         "fields": {
             "city": "ЙОШКАР-ОЛА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 243
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "REN",
         "fields": {
             "city": "ОРЕНБУРГ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 490
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "GOJ",
         "fields": {
             "city": "НИЖНИЙ НОВГОРОД",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 449
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "PVS",
         "fields": {
             "city": "ПОСЁЛОК ПРОВИДЕНИЯ",
-            "time_zone": "Asia/Anadyr"
+            "time_zone": "Asia/Anadyr",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "RTW",
         "fields": {
             "city": "САРАТОВ",
-            "time_zone": "Europe/Samara"
+            "time_zone": "Europe/Samara",
+            "city_general": 585
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "GYG",
         "fields": {
             "city": "МАГАН",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NJC",
         "fields": {
             "city": "НИЖНЕВАРТОВСК",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 446
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KYZ",
         "fields": {
             "city": "КЫЗЫЛ",
-            "time_zone": "Asia/Krasnoyarsk"
+            "time_zone": "Asia/Krasnoyarsk",
+            "city_general": 357
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "LDG",
         "fields": {
             "city": "ЛЕШУКОНСКОЕ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ZKP",
         "fields": {
             "city": "ЗЫРЯНКА",
-            "time_zone": "Asia/Srednekolymsk"
+            "time_zone": "Asia/Srednekolymsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "VVO",
         "fields": {
             "city": "ВЛАДИВОСТОК",
-            "time_zone": "Asia/Vladivostok"
+            "time_zone": "Asia/Vladivostok",
+            "city_general": 116
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "IGT",
         "fields": {
             "city": "НАЗРАНЬ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 432
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "PKC",
         "fields": {
             "city": "ПЕТРОПАВЛОВСК-КАМЧАТСКИЙ",
-            "time_zone": "Asia/Kamchatka"
+            "time_zone": "Asia/Kamchatka",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "GDX",
         "fields": {
             "city": "МАГАДАН",
-            "time_zone": "Asia/Magadan"
+            "time_zone": "Asia/Magadan",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "EGO",
         "fields": {
             "city": "БЕЛГОРОД",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 60
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "VUS",
         "fields": {
             "city": "ВЕЛИКИЙ УСТЮГ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 106
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "OHH",
         "fields": {
             "city": "ОХА",
-            "time_zone": "Asia/Srednekolymsk"
+            "time_zone": "Asia/Srednekolymsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "EIE",
         "fields": {
             "city": "ЕНИСЕЙСК",
-            "time_zone": "Asia/Krasnoyarsk"
+            "time_zone": "Asia/Krasnoyarsk",
+            "city_general": 197
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ESL",
         "fields": {
             "city": "ЭЛИСТА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 759
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "RGK",
         "fields": {
             "city": "ГОРНО-АЛТАЙСК",
-            "time_zone": "Asia/Novokuznetsk"
+            "time_zone": "Asia/Novokuznetsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "MQF",
         "fields": {
             "city": "МАГНИТОГОРСК",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 387
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "TYD",
         "fields": {
             "city": "ТЫНДА",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": 685
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "SLY",
         "fields": {
             "city": "САЛЕХАРД",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NBC",
         "fields": {
             "city": "НАБЕРЕЖНЫЕ ЧЕЛНЫ (НИЖНЕКАМСК)",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ULY",
         "fields": {
             "city": "УЛЬЯНОВСК",
-            "time_zone": "Europe/Samara"
+            "time_zone": "Europe/Samara",
+            "city_general": 692
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NER",
         "fields": {
             "city": "НЕРЮНГРИ",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": 442
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "USK",
         "fields": {
             "city": "УСИНСК",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 697
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KPW",
         "fields": {
             "city": "КЕПЕРВЕЕМ",
-            "time_zone": "Asia/Kamchatka"
+            "time_zone": "Asia/Kamchatka",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "PES",
         "fields": {
             "city": "ПЕТРОЗАВОДСК",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 517
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "CEE",
         "fields": {
             "city": "ЧЕРЕПОВЕЦ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 731
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "RAT",
         "fields": {
             "city": "РАДУЖНЫЙ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 556
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "TGP",
         "fields": {
             "city": "БОР",
-            "time_zone": "Asia/Krasnoyarsk"
+            "time_zone": "Asia/Krasnoyarsk",
+            "city_general": 86
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "OMS",
         "fields": {
             "city": "ОМСК",
-            "time_zone": "Asia/Omsk"
+            "time_zone": "Asia/Omsk",
+            "city_general": 488
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "CEK",
         "fields": {
             "city": "ЧЕЛЯБИНСК",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 728
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KCK",
         "fields": {
             "city": "КИРЕНСК",
-            "time_zone": "Asia/Irkutsk"
+            "time_zone": "Asia/Irkutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KXK",
         "fields": {
             "city": "КОМСОМОЛЬСК-НА-АМУРЕ",
-            "time_zone": "Asia/Vladivostok"
+            "time_zone": "Asia/Vladivostok",
+            "city_general": 313
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KJA",
         "fields": {
             "city": "КРАСНОЯРСК",
-            "time_zone": "Asia/Krasnoyarsk"
+            "time_zone": "Asia/Krasnoyarsk",
+            "city_general": 338
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NOI",
         "fields": {
             "city": "НОВОРОССИЙСК",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 460
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "TOX",
         "fields": {
             "city": "ТОБОЛЬСК",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 669
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "HTA",
         "fields": {
             "city": "ЧИТА",
-            "time_zone": "Asia/Chita"
+            "time_zone": "Asia/Chita",
+            "city_general": 736
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "DYR",
         "fields": {
             "city": "АНАДЫРЬ",
-            "time_zone": "Asia/Anadyr"
+            "time_zone": "Asia/Anadyr",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "OVB",
         "fields": {
             "city": "НОВОСИБИРСК",
-            "time_zone": "Asia/Phnom_Penh"
+            "time_zone": "Asia/Phnom_Penh",
+            "city_general": 461
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "IAA",
         "fields": {
             "city": "ИГАРКА",
-            "time_zone": "Asia/Krasnoyarsk"
+            "time_zone": "Asia/Krasnoyarsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "PEE",
         "fields": {
             "city": "ПЕРМЬ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 513
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ABA",
         "fields": {
             "city": "АБАКАН",
-            "time_zone": "Asia/Krasnoyarsk"
+            "time_zone": "Asia/Krasnoyarsk",
+            "city_general": 2
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NYM",
         "fields": {
             "city": "НАДЫМ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "UFA",
         "fields": {
             "city": "УФА",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 706
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "IKT",
         "fields": {
             "city": "ИРКУТСК",
-            "time_zone": "Asia/Irkutsk"
+            "time_zone": "Asia/Irkutsk",
+            "city_general": 238
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NEF",
         "fields": {
             "city": "НЕФТЕКАМСК",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 444
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "GVN",
         "fields": {
             "city": "СОВЕТСКАЯ ГАВАНЬ",
-            "time_zone": "Asia/Vladivostok"
+            "time_zone": "Asia/Vladivostok",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "SEK",
         "fields": {
             "city": "СРЕДНЕКОЛЫМСК",
-            "time_zone": "Asia/Srednekolymsk"
+            "time_zone": "Asia/Srednekolymsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "OGZ",
         "fields": {
             "city": "ВЛАДИКАВКАЗ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 117
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ONK",
         "fields": {
             "city": "ОЛЕНЁК",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NUX",
         "fields": {
             "city": "НОВЫЙ УРЕНГОЙ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 470
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "TQL",
         "fields": {
             "city": "ТАРКО-САЛЕ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "LED",
         "fields": {
             "city": "САНКТ-ПЕТЕРБУРГ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 582
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "RZN",
         "fields": {
             "city": "РЯЗАНЬ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 576
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "YKS",
         "fields": {
             "city": "ЯКУТСК",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": 767
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "CYX",
         "fields": {
             "city": "ЧЕРСКИЙ",
-            "time_zone": "Asia/Srednekolymsk"
+            "time_zone": "Asia/Srednekolymsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NOJ",
         "fields": {
             "city": "НОЯБРЬСК",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 472
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "UUA",
         "fields": {
             "city": "БУГУЛЬМА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 95
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "CKL",
         "fields": {
             "city": "ЧКАЛОВСКИЙ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "САЙ",
         "fields": {
             "city": "СУЛОМАЙ",
-            "time_zone": "Asia/Krasnoyarsk"
+            "time_zone": "Asia/Krasnoyarsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KGD",
         "fields": {
             "city": "КАЛИНИНГРАД",
-            "time_zone": "Europe/Kaliningrad"
+            "time_zone": "Europe/Kaliningrad",
+            "city_general": 248
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NSK",
         "fields": {
             "city": "НОРИЛЬСК",
-            "time_zone": "Asia/Krasnoyarsk"
+            "time_zone": "Asia/Krasnoyarsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "MQJ",
         "fields": {
             "city": "ХОНУУ",
-            "time_zone": "Asia/Srednekolymsk"
+            "time_zone": "Asia/Srednekolymsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "RZH",
         "fields": {
             "city": "ПРЕОБРАЖЕНИЕ",
-            "time_zone": "Asia/Vladivostok"
+            "time_zone": "Asia/Vladivostok",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NLI",
         "fields": {
             "city": "НИКОЛАЕВСК-НА-АМУРЕ",
-            "time_zone": "Asia/Vladivostok"
+            "time_zone": "Asia/Vladivostok",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "LPK",
         "fields": {
             "city": "ЛИПЕЦК",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 371
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ACS",
         "fields": {
             "city": "АЧИНСК",
-            "time_zone": "Asia/Krasnoyarsk"
+            "time_zone": "Asia/Krasnoyarsk",
+            "city_general": 40
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "IAR",
         "fields": {
             "city": "ЯРОСЛАВЛЬ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 772
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ULK",
         "fields": {
             "city": "ЛЕНСК",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": 365
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ITU",
         "fields": {
             "city": "ИТУРУП",
-            "time_zone": "Asia/Srednekolymsk"
+            "time_zone": "Asia/Srednekolymsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "OEL",
         "fields": {
             "city": "ОРЁЛ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 494
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "UUD",
         "fields": {
             "city": "УЛАН-УДЭ",
-            "time_zone": "Asia/Irkutsk"
+            "time_zone": "Asia/Irkutsk",
+            "city_general": 691
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "LNX",
         "fields": {
             "city": "СМОЛЕНСК",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 614
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "DHG",
         "fields": {
             "city": "ДАЛЬНЕГОРСК",
-            "time_zone": "Asia/Vladivostok"
+            "time_zone": "Asia/Vladivostok",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "SWV",
         "fields": {
             "city": "ЭВЕНСК",
-            "time_zone": "Asia/Magadan"
+            "time_zone": "Asia/Magadan",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "AER",
         "fields": {
             "city": "СОЧИ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 628
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KVX",
         "fields": {
             "city": "КИРОВ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 291
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "TYA",
         "fields": {
             "city": "ТУЛА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 682
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "BZK",
         "fields": {
             "city": "БРЯНСК",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 94
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "GDZ",
         "fields": {
             "city": "ГЕЛЕНДЖИК",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "IJK",
         "fields": {
             "city": "ИЖЕВСК",
-            "time_zone": "Europe/Samara"
+            "time_zone": "Europe/Samara",
+            "city_general": 232
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "CSY",
         "fields": {
             "city": "ЧЕБОКСАРЫ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 726
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "PYJ",
         "fields": {
             "city": "УДАЧНЫЙ",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "TLY",
         "fields": {
             "city": "ПЛАСТУН",
-            "time_zone": "Asia/Vladivostok"
+            "time_zone": "Asia/Vladivostok",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "OHO",
         "fields": {
             "city": "ОХОТСК",
-            "time_zone": "Asia/Vladivostok"
+            "time_zone": "Asia/Vladivostok",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "OKT",
         "fields": {
             "city": "ОКТЯБРЬСКИЙ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 484
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "PEZ",
         "fields": {
             "city": "ПЕНЗА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 508
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KRO",
         "fields": {
             "city": "КУРГАН",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 352
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "SUK",
         "fields": {
             "city": "БАТАГАЙ-АЛЫТА",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ROV",
         "fields": {
             "city": "РОСТОВ-НА-ДОНУ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "UTS",
         "fields": {
             "city": "УСТЬ-ЦИЛЬМА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "GRV",
         "fields": {
             "city": "ГРОЗНЫЙ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 154
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "OLZ",
         "fields": {
             "city": "ОЛЁКМИНСК",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "SWT",
         "fields": {
             "city": "СТРЕЖЕВОЙ",
-            "time_zone": "Asia/Novosibirsk"
+            "time_zone": "Asia/Novosibirsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "VGD",
         "fields": {
             "city": "ВОЛОГДА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 123
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KLD",
         "fields": {
             "city": "ТВЕРЬ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 663
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "OVS",
         "fields": {
             "city": "СОВЕТСКИЙ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 618
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "IWA",
         "fields": {
             "city": "ИВАНОВО",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 229
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KKQ",
         "fields": {
             "city": "КРАСНОСЕЛЬКУП",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ZIX",
         "fields": {
             "city": "ЖИГАНСК",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "UKX",
         "fields": {
             "city": "УСТЬ-КУТ",
-            "time_zone": "Asia/Irkutsk"
+            "time_zone": "Asia/Irkutsk",
+            "city_general": 704
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "SGC",
         "fields": {
             "city": "СУРГУТ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 645
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "CSH",
         "fields": {
             "city": "СОЛОВЕЦКИЙ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "MOW",
         "fields": {
             "city": "МОСКВА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 421
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "GDG",
         "fields": {
             "city": "МАГДАГАЧИ",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "SYS",
         "fields": {
             "city": "САСКЫЛАХ",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "RYB",
         "fields": {
             "city": "РЫБИНСК",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 573
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "BQG",
         "fields": {
             "city": "БОГОРОДСКОЕ",
-            "time_zone": "Asia/Vladivostok"
+            "time_zone": "Asia/Vladivostok",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ODO",
         "fields": {
             "city": "БОДАЙБО",
-            "time_zone": "Asia/Irkutsk"
+            "time_zone": "Asia/Irkutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KUF",
         "fields": {
             "city": "САМАРА",
-            "time_zone": "Europe/Samara"
+            "time_zone": "Europe/Samara",
+            "city_general": 581
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "THX",
         "fields": {
             "city": "ТУРУХАНСК",
-            "time_zone": "Asia/Krasnoyarsk"
+            "time_zone": "Asia/Krasnoyarsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "BQS",
         "fields": {
             "city": "БЛАГОВЕЩЕНСК",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": 79
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "UKG",
         "fields": {
             "city": "УСТЬ-КУЙГА",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "URJ",
         "fields": {
             "city": "УРАЙ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 694
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KZN",
         "fields": {
             "city": "КАЗАНЬ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 245
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "SBT",
         "fields": {
             "city": "САБЕТТА",
-            "time_zone": "Asia/Dushanbe"
+            "time_zone": "Asia/Dushanbe",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KRR",
         "fields": {
             "city": "КРАСНОДАР",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 333
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "DEE",
         "fields": {
             "city": "ЮЖНО-КУРИЛЬСК",
-            "time_zone": "Asia/Sakhalin"
+            "time_zone": "Asia/Sakhalin",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KVK",
         "fields": {
             "city": "КИРОВСК (АПАТИТЫ)",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "IRM",
         "fields": {
             "city": "ИГРИМ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "PKV",
         "fields": {
             "city": "ПСКОВ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 549
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "TLK",
         "fields": {
             "city": "ТАЛАКАН",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "HMA",
         "fields": {
             "city": "ХАНТЫ-МАНСИЙСК",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "HTG",
         "fields": {
             "city": "ХАТАНГА",
-            "time_zone": "Asia/Krasnoyarsk"
+            "time_zone": "Asia/Krasnoyarsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "PEX",
         "fields": {
             "city": "ПЕЧОРА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 520
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "SVX",
         "fields": {
             "city": "ЕКАТЕРИНБУРГ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 192
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "TOF",
         "fields": {
             "city": "ТОМСК",
-            "time_zone": "Asia/Novokuznetsk"
+            "time_zone": "Asia/Novokuznetsk",
+            "city_general": 674
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KHV",
         "fields": {
             "city": "ХАБАРОВСК",
-            "time_zone": "Asia/Vladivostok"
+            "time_zone": "Asia/Vladivostok",
+            "city_general": 714
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KGP",
         "fields": {
             "city": "КОГАЛЫМ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 303
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "DPT",
         "fields": {
             "city": "ДЕПУТАТСКИЙ",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KEJ",
         "fields": {
             "city": "КЕМЕРОВО",
-            "time_zone": "Asia/Novokuznetsk"
+            "time_zone": "Asia/Novokuznetsk",
+            "city_general": 278
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ZZO",
         "fields": {
             "city": "ЗОНАЛЬНОЕ",
-            "time_zone": "Asia/Sakhalin"
+            "time_zone": "Asia/Sakhalin",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "SKX",
         "fields": {
             "city": "САРАНСК",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 583
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "EKS",
         "fields": {
             "city": "ШАХТЁРСК",
-            "time_zone": "Asia/Sakhalin"
+            "time_zone": "Asia/Sakhalin",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "MMK",
         "fields": {
             "city": "МУРМАНСК",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 424
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "AAQ",
         "fields": {
             "city": "АНАПА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 20
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "VLK",
         "fields": {
             "city": "ВОЛГОДОНСК",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 120
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "SCW",
         "fields": {
             "city": "СЫКТЫВКАР",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 650
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "EYK",
         "fields": {
             "city": "БЕЛОЯРСКИЙ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 67
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "VOG",
         "fields": {
             "city": "ВОЛГОГРАД",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 119
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "BGN",
         "fields": {
             "city": "БЕЛАЯ ГОРА",
-            "time_zone": "Asia/Srednekolymsk"
+            "time_zone": "Asia/Srednekolymsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "INA",
         "fields": {
             "city": "ИНТА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 236
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NYA",
         "fields": {
             "city": "НЯГАНЬ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 474
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ASF",
         "fields": {
             "city": "АСТРАХАНЬ",
-            "time_zone": "Europe/Samara"
+            "time_zone": "Europe/Samara",
+            "city_general": 38
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ARH",
         "fields": {
             "city": "АРХАНГЕЛЬСК",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 35
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "EZV",
         "fields": {
             "city": "БЕРЁЗОВО",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "BWO",
         "fields": {
             "city": "БАЛАКОВО",
-            "time_zone": "Europe/Volgograd"
+            "time_zone": "Europe/Volgograd",
+            "city_general": 48
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NYR",
         "fields": {
             "city": "НЮРБА",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NVR",
         "fields": {
             "city": "ВЕЛИКИЙ НОВГОРОД",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 105
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "PWE",
         "fields": {
             "city": "ПЕВЕК",
-            "time_zone": "Asia/Anadyr"
+            "time_zone": "Asia/Anadyr",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "VLU",
         "fields": {
             "city": "ВЕЛИКИЕ ЛУКИ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 104
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "YMK",
         "fields": {
             "city": "МЫС-КАМЕННЫЙ",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "TBW",
         "fields": {
             "city": "ТАМБОВ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 659
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "DKS",
         "fields": {
             "city": "ДИКСОН",
-            "time_zone": "Asia/Krasnoyarsk"
+            "time_zone": "Asia/Krasnoyarsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NOZ",
         "fields": {
             "city": "НОВОКУЗНЕЦК",
-            "time_zone": "Asia/Novokuznetsk"
+            "time_zone": "Asia/Novokuznetsk",
+            "city_general": 457
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "UCT",
         "fields": {
             "city": "УХТА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 707
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KMW",
         "fields": {
             "city": "КОСТРОМА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 323
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "VOZ",
         "fields": {
             "city": "ВОРОНЕЖ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 130
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "VYI",
         "fields": {
             "city": "ВИЛЮЙСК",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NGK",
         "fields": {
             "city": "НОГЛИКИ",
-            "time_zone": "Asia/Sakhalin"
+            "time_zone": "Asia/Sakhalin",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "BAX",
         "fields": {
             "city": "БАРНАУЛ",
-            "time_zone": "Asia/Novokuznetsk"
+            "time_zone": "Asia/Novokuznetsk",
+            "city_general": 54
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "SUY",
         "fields": {
             "city": "СУНТАР",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KSZ",
         "fields": {
             "city": "КОТЛАС",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 326
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "CKH",
         "fields": {
             "city": "ЧОКУРДАХ",
-            "time_zone": "Asia/Srednekolymsk"
+            "time_zone": "Asia/Srednekolymsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NAL",
         "fields": {
             "city": "НАЛЬЧИК",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 434
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "TGK",
         "fields": {
             "city": "ТАГАНРОГ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 654
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "BCX",
         "fields": {
             "city": "БЕЛОРЕЦК",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": 65
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "UMS",
         "fields": {
             "city": "УСТЬ-МАЯ",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "UUS",
         "fields": {
             "city": "ЮЖНО-САХАЛИНСК",
-            "time_zone": "Asia/Srednekolymsk"
+            "time_zone": "Asia/Srednekolymsk",
+            "city_general": 761
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "STW",
         "fields": {
             "city": "СТАВРОПОЛЬ",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 633
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NFG",
         "fields": {
             "city": "НЕФТЕЮГАНСК",
-            "time_zone": "Asia/Yekaterinburg"
+            "time_zone": "Asia/Yekaterinburg",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "VHV",
         "fields": {
             "city": "ВЕРХНЕВИЛЮЙСК",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "IKS",
         "fields": {
             "city": "ТИКСИ",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "KVR",
         "fields": {
             "city": "КАВАЛЕРОВО",
-            "time_zone": "Asia/Vladivostok"
+            "time_zone": "Asia/Vladivostok",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ADH",
         "fields": {
             "city": "АЛДАН",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": 10
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "BVV",
         "fields": {
             "city": "ИТУРУП",
-            "time_zone": "Asia/Sakhalin"
+            "time_zone": "Asia/Sakhalin",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "BTK",
         "fields": {
             "city": "БРАТСК",
-            "time_zone": "Asia/Irkutsk"
+            "time_zone": "Asia/Irkutsk",
+            "city_general": 92
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "UIK",
         "fields": {
             "city": "УСТЬ-ИЛИМСК",
-            "time_zone": "Asia/Irkutsk"
+            "time_zone": "Asia/Irkutsk",
+            "city_general": 702
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "NNM",
         "fields": {
             "city": "НАРЬЯН-МАР",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "MCX",
         "fields": {
             "city": "МАХАЧКАЛА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 398
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "MJZ",
         "fields": {
             "city": "МИРНЫЙ",
-            "time_zone": "Asia/Yakutsk"
+            "time_zone": "Asia/Yakutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "ERG",
         "fields": {
             "city": "ЕРБОГАЧЁН",
-            "time_zone": "Asia/Irkutsk"
+            "time_zone": "Asia/Irkutsk",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "BQJ",
         "fields": {
             "city": "БАТАГАЙ",
-            "time_zone": "Asia/Vladivostok"
+            "time_zone": "Asia/Vladivostok",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "URS",
         "fields": {
             "city": "КУРСК",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": 354
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "AMV",
         "fields": {
             "city": "АМДЕРМА",
-            "time_zone": "Europe/Moscow"
+            "time_zone": "Europe/Moscow",
+            "city_general": null
         }
     },
     {
-        "model": "aviasales_api.city",
+        "model": "aviasales_api.city_for_avia",
         "pk": "USR",
         "fields": {
             "city": "УСТЬ-НЕРА",
-            "time_zone": "Asia/Ust-Nera"
+            "time_zone": "Asia/Ust-Nera",
+            "city_general": null
         }
     }
 ]
